@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Đăng Ký</title>
+  <style>
+    /* CSS cơ bản để form dễ nhìn hơn */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .registration-form-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    select,
+    textarea {
+      width: calc(100% - 20px); /* Trừ padding */
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng tổng thể */
+      font-size: 16px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      display: inline-block; /* Để label và input nằm trên cùng một dòng */
+      margin-right: 15px;
+      font-weight: normal;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .button-group button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-group button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .button-group button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .button-group button[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .button-group button[type="reset"]:hover {
+      background-color: #da190b;
+    }
+
+    .terms-checkbox {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .terms-checkbox label {
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+
+<div class="registration-form-container">
+  <h2>Đăng Ký Tài Khoản Mới</h2>
+  <form action="/submit_registration" method="post">
+    <div class="form-group">
+      <label for="username">Tên người dùng:</label>
+      <input type="text" id="username" name="username" placeholder="Nhập tên người dùng" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="ví dụ: email@example.com" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mật khẩu:</label>
+      <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required minlength="6">
+    </div>
+
+    <div class="form-group">
+      <label for="confirm_password">Xác nhận mật khẩu:</label>
+      <input type="password" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" required minlength="6">
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Ngày sinh:</label>
+      <input type="date" id="dob" name="dob">
+    </div>
+
+    <div class="form-group">
+      <label>Giới tính:</label>
+      <div class="radio-group">
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Nam</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Nữ</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Khác</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Quốc gia:</label>
+      <select id="country" name="country">
+        <option value="">--Chọn quốc gia--</option>
+        <option value="vn">Việt Nam</option>
+        <option value="us">Hoa Kỳ</option>
+        <option value="ca">Canada</option>
+        <option value="uk">Vương quốc Anh</option>
+        <option value="au">Úc</option>
+        <option value="other">Khác</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="about">Giới thiệu bản thân (tùy chọn):</label>
+      <textarea id="about" name="about" rows="4" placeholder="Kể một chút về bạn..."></textarea>
+    </div>
+
+    <div class="terms-checkbox">
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">Tôi đồng ý với <a href="#" target="_blank">Điều khoản sử dụng</a>.</label>
+    </div>
+
+    <div class="button-group">
+      <button type="submit">Đăng Ký</button>
+      <button type="reset">Làm Lại</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

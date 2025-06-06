@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký học viên</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #336699;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .registration-form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        .form-group {
+             margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="registration-form-container">
+        <h2>Đăng ký học viên</h2>
+        <form action="https://james.codegym.vn/mod/assign/view.php?id=15358" method="post">
+            <div class="form-group">
+                <label for="username">Họ và tên:</label>
+                <input type="text" id="username" name="username" >
+            </div>
+            <div class="form-group">
+                <label for="date">Ngày sinh:</label>
+                <input type="date" id="date" name="date" >
+            </div>
+            <div class="form-group">
+                <label>Giới tính:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Nam</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Nữ</label>
+                </div>
+                <div class="form-group">
+                    <label for="about">Địa chỉ:</label>
+                    <textarea id="about" name="about" rows="4" ></textarea>
+                </div>
+                <div class="form-group"><br>
+                    Lớp:
+                    <select>
+                        <label for="username">Lớp:</label>
+                         <option value = "  ">Java full stack</option>
+                         <option>Html</option>
+                         <option>C+/C#</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" >
+                </div>
+                <div class="form-group">
+                    <label for="numbercall">Số điện thoại:</label>
+                    <input type="email" id="numbercall" name="numbercall" >
+                </div>
+                <div class="button-group">
+                    <button type="submit">Đăng Ký</button>
+                    <button type="reset">Làm Lại</button>
+                </div>
+        </form>
+    </div>
+
+
+</body>
+</html>
